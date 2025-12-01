@@ -139,31 +139,8 @@ footer {
         display: block; /* ให้ลิงก์เรียงเป็นแนวตั้ง */
         margin: 5px 0;
     }
-
-.product-item {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    
-    /* โค้ด 2 บรรทัดนี้ คือการแก้ไขหลัก */
-    height: 200px; /* กำหนดความสูงตายตัวของกรอบสินค้า (ลองปรับตัวเลขนี้ดูได้) */
-    overflow: hidden; /* สั่งซ่อนส่วนที่ล้นออกนอกกรอบนี้ */
-}
-.product-item img {
-    /* ลบ width: 100%; และ height: auto; ออกไป */
-    
-    /* เพิ่มโค้ด 3 บรรทัดนี้ */
-    width: 100%;
-    height: 100%; /* ให้รูปภาพเต็มความสูงของกรอบ */
-    object-fit: cover; /* บังคับให้รูปภาพครอบคลุมพื้นที่ โดยตัดส่วนที่เกินออก */
-    
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
 
-}
 
 
 
