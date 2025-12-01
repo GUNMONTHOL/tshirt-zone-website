@@ -103,12 +103,11 @@ section h2 {
     justify-content: center;
 }
 
-.product-item {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px; /* กำหนดความกว้างของแต่ละสินค้า */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.product-item img {
+    width: 100%; /* ทำให้รูปภาพยืดเต็มความกว้างของกรอบสินค้า */
+    height: auto; /* รักษาอัตราส่วนของรูปภาพ */
+    border-radius: 5px; /* ทำให้มุมของรูปภาพโค้งมนเล็กน้อย */
+    margin-bottom: 10px; /* เว้นระยะห่างด้านล่างรูปภาพ */
 }
 
 .product-item h3 {
@@ -151,4 +150,5 @@ footer {
     .product-item {
         width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
     }
+
 }
