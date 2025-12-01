@@ -147,8 +147,24 @@ footer {
         margin: 5px 0;
     }
 
-    .product-item {
-        width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
-    }
+.product-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    /* โค้ด 2 บรรทัดนี้ คือการแก้ไขหลัก */
+    height: 600px; /* กำหนดความสูงตายตัวของกรอบสินค้า (ลองปรับตัวเลขนี้ดูได้) */
+    overflow: hidden; /* สั่งซ่อนส่วนที่ล้นออกนอกกรอบนี้ */
+}
+    .product-item img {
+    width: 100%; 
+    height: auto; /* รักษาอัตราส่วนของรูปภาพ */
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    /* ถ้าใช้ overflow: hidden แล้ว อาจไม่จำเป็นต้องมีโค้ดเพิ่มเติมตรงนี้ */
+}
 
 }
+
