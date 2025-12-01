@@ -82,7 +82,7 @@ section h2 {
     border-radius: 3px;
     font-size: 0.9em;
     transition: background-color 0.3s;
-    display: inline-block; /* ทำให้ปุ่มอยู่บรรทัดใหม่ */
+    display: inline-block; 
     margin-top: 10px;
 }
 
@@ -111,8 +111,8 @@ section h2 {
     border-radius: 8px;
     
     /* แก้ไขขนาดกรอบสินค้า */
-    width: 250px;       /* กำหนดความกว้างของกรอบ (ลดลงจาก 300px) */
-    height: 450px;      /* กำหนดความสูงของกรอบ (ลดลงจาก 600px) */
+    width: 250px;       /* ความกว้างของกรอบ */
+    height: 550px;      /* **ปรับความสูงเพิ่มขึ้น** เพื่อให้มีพื้นที่สำหรับข้อความด้านล่าง */
     overflow: hidden;   /* สั่งซ่อนส่วนที่ล้นออกนอกกรอบ */
     
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -126,7 +126,8 @@ section h2 {
     object-fit: cover; /* บังคับให้รูปภาพครอบคลุมพื้นที่ โดยตัดส่วนที่เกินออก */
     
     border-radius: 5px;
-    margin-bottom: 10px;
+    /* ลบ margin-bottom ออก หรือตั้งค่าเป็น 0 เพื่อให้รูปภาพติดกับข้อความด้านล่าง */
+    margin-bottom: 0; 
 }
 
 /* ส่วนติดต่อ (Contact) */
@@ -163,7 +164,7 @@ footer {
     }
 
     .product-item {
-        width: 90%; /* ให้สินค้าเกือบเต็มความกว้างในมือถือ */
-        height: 400px; /* ลดความสูงลงเล็กน้อย */
+        width: 90%; 
+        height: 500px; /* ปรับความสูงสำหรับมือถือ */
     }
 }
