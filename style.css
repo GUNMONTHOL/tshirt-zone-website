@@ -127,7 +127,7 @@ section h2 {
     
     border-radius: 5px;
     /* ลบ margin-bottom ออก หรือตั้งค่าเป็น 0 เพื่อให้รูปภาพติดกับข้อความด้านล่าง */
-    margin-bottom: 0; 
+    margin-bottom: 10px; 
 }
 
 /* ส่วนติดต่อ (Contact) */
@@ -168,5 +168,6 @@ footer {
         height: 500px; /* ปรับความสูงสำหรับมือถือ */
     }
 }
+
 
 
