@@ -144,11 +144,11 @@ footer {
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
-    width: 300px; 
+    width: 200px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     
     /* โค้ด 2 บรรทัดนี้ คือการแก้ไขหลัก */
-    height: 600px; /* กำหนดความสูงตายตัวของกรอบสินค้า (ลองปรับตัวเลขนี้ดูได้) */
+    height: 200px; /* กำหนดความสูงตายตัวของกรอบสินค้า (ลองปรับตัวเลขนี้ดูได้) */
     overflow: hidden; /* สั่งซ่อนส่วนที่ล้นออกนอกกรอบนี้ */
 }
     .product-item img {
@@ -160,5 +160,6 @@ footer {
 }
 
 }
+
 
 
