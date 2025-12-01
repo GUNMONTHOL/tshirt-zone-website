@@ -103,6 +103,14 @@ section h2 {
     justify-content: center;
 }
 
+.product-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; /* กำหนดความกว้างของแต่ละสินค้า */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .product-item h3 {
     color: #ff4500;
 }
@@ -139,9 +147,8 @@ footer {
         display: block; /* ให้ลิงก์เรียงเป็นแนวตั้ง */
         margin: 5px 0;
     }
+
+    .product-item {
+        width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
+    }
 }
-
-
-
-
-
