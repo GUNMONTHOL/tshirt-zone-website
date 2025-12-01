@@ -151,5 +151,37 @@ footer {
     .product-item {
         width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
     }
+    /* --- โค้ดสำหรับ Image Slider (Gallery) --- */
+
+.image-gallery-wrapper {
+    /* กำหนดความสูงของพื้นที่ดูภาพ */
+    height: 400px; /* ปรับความสูงของกรอบดูภาพ */
+    width: 100%;
+    margin-bottom: 10px;
+    overflow-x: scroll; /* ทำให้เลื่อนแนวนอนได้ */
+    overflow-y: hidden; /* ซ่อน Scrollbar แนวตั้ง */
+    scroll-snap-type: x mandatory; /* ทำให้ภาพหยุดนิ่งเมื่อเลื่อน */
+    border-radius: 5px;
 }
+
+.image-gallery {
+    display: flex; /* จัดเรียงรูปภาพเป็นแถวเดียวแนวนอน */
+    height: 100%;
+}
+
+.gallery-image {
+    flex-shrink: 0; /* ป้องกันไม่ให้รูปภาพหดตัว */
+    width: 100%; /* ให้รูปภาพแต่ละรูปเต็มความกว้างของ Wrapper */
+    height: 100%;
+    object-fit: cover; /* ครอบคลุมพื้นที่และตัดส่วนที่เกินไป */
+    scroll-snap-align: start; /* กำหนดจุดหยุดของภาพเมื่อเลื่อน */
+    border-radius: 5px;
+}
+
+/* ซ่อน Scrollbar ที่ไม่สวยงาม (สำหรับ Chrome/Safari) */
+.image-gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+}
+
 
