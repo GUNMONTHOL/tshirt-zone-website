@@ -1,0 +1,154 @@
+/* การตั้งค่าพื้นฐาน */
+body {
+    font-family: sans-serif; /* ใช้ฟอนต์ที่อ่านง่าย */
+    margin: 0;
+    padding: 0;
+    background-color: #111; /* พื้นหลังสีดำเข้ม */
+    color: #f0f0f0; /* ตัวอักษรสีขาวสว่าง */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* จำกัดความกว้างไม่ให้ยืดเกินไป */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ส่วนหัว (Header) และ Navigation */
+header {
+    background-color: #000; /* สีดำสนิทสำหรับ Header */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #ff4500; /* ใช้สีส้มเข้ม (OrangeRed) เป็นสีเน้น */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4500; /* เปลี่ยนสีเมื่อเอาเมาส์มาวาง */
+}
+
+/* ส่วน Section ทั่วไป */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #ff4500;
+}
+
+/* ปุ่ม (Buttons) */
+.btn {
+    display: inline-block;
+    background-color: #ff4500;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e63900;
+}
+
+.btn-small {
+    /* ปุ่มเล็กสำหรับใน Product Item */
+    background-color: #444;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.btn-small:hover {
+    background-color: #ff4500;
+}
+
+/* ส่วน Hero (About) */
+.hero {
+    background-color: #000;
+    padding: 80px 0;
+}
+
+/* ส่วน Grid สินค้า (Product Grid) */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้สินค้าขึ้นบรรทัดใหม่เมื่อหน้าจอแคบ */
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; /* กำหนดความกว้างของแต่ละสินค้า */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.product-item h3 {
+    color: #ff4500;
+}
+
+/* ส่วนติดต่อ (Contact) */
+#contact a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* ส่วนท้าย (Footer) */
+footer {
+    background-color: #000;
+    padding: 15px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Media Queries: สำหรับการปรับให้เข้ากับมือถือ */
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column; /* ให้ Nav อยู่ใต้ H1 ในหน้าจอมือถือ */
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        display: block; /* ให้ลิงก์เรียงเป็นแนวตั้ง */
+        margin: 5px 0;
+    }
+
+    .product-item {
+        width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
+    }
+}
