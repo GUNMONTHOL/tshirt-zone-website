@@ -107,7 +107,7 @@ section h2 {
     background-color: #222;
     padding: 20px;
     border-radius: 8px;
-    width: 300px; /* กำหนดความกว้างของแต่ละสินค้า */
+    width: 600px; /* กำหนดความกว้างของแต่ละสินค้า */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -152,3 +152,4 @@ footer {
         width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
     }
 }
+
