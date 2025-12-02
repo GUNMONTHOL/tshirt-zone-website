@@ -167,7 +167,7 @@ nav a:hover {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    /* ลบ height ตายตัวออก ปล่อยให้ยืดตามเนื้อหา */
+    height: 600px;
     overflow: hidden;   
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
@@ -255,3 +255,4 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
+
