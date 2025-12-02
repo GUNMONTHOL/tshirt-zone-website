@@ -65,7 +65,7 @@ h2 {
     background-color: #ff4500;
 }
 
-/* --- 1. HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     position: fixed;
     top: 0;
@@ -107,7 +107,7 @@ nav a:hover {
     color: #ff4500;
 }
 
-/* --- 2. HERO SECTION --- */
+/* --- HERO SECTION --- */
 .full-screen-hero {
     background: url('https://via.placeholder.com/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
     height: 100vh;
@@ -140,7 +140,7 @@ nav a:hover {
     font-weight: 600;
 }
 
-/* --- 3. ABOUT SECTION --- */
+/* --- ABOUT SECTION --- */
 .two-column-layout {
     display: flex;
     gap: 40px;
@@ -152,24 +152,20 @@ nav a:hover {
 .two-column-layout .col-image { flex-shrink: 0; width: 40%; }
 .two-column-layout .col-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
-/* --- 4. PRODUCTS SECTION (สำคัญ: เปลี่ยนเป็นแนวตั้งทั้งหมด) --- */
-
-/* ลบ Flexbox สำหรับการจัดเรียงแนวนอน และเปลี่ยนเป็น Block */
-.product-grid-two-cols { 
-    display: block; /* บังคับให้เป็นแนวตั้ง */
-    margin-top: 30px; 
+/* --- PRODUCTS SECTION (จุดที่แก้ไขรูปภาพ) --- */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: center;
 }
 
-.product-full-width-wrapper {
-    display: block; /* บังคับให้เป็นแนวตั้ง */
-    margin-bottom: 30px;
-}
-
-/* สไตล์พื้นฐานของรายการสินค้าทั้งหมด */
 .product-item {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
+    width: 300px;
+    /* ไม่กำหนด height ตายตัวที่นี่ ปล่อยให้ยืดตามเนื้อหา */
     overflow: hidden;   
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
@@ -179,28 +175,37 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
 }
 
-/* *** สไตล์สำหรับสินค้าทั้งหมด (1 คอลัมน์) *** */
-.full-width-item, .half-width-item {
-    width: 90%; /* กำหนดความกว้างหลักที่ 90% */
-    max-width: 900px; /* จำกัดขนาดไม่ให้ใหญ่เกินไป */
-    margin: 0 auto 30px auto; /* จัดให้อยู่ตรงกลางและมีระยะห่างด้านล่าง */
-    height: auto; /* ปรับความสูงตามเนื้อหา */
-    padding: 30px;
-}
-
-.half-width-item {
-    /* ใช้ padding 20px เหมือน item อื่นๆ */
-    padding: 20px; 
-}
-/* สิ้นสุดการกำหนดความกว้างและการจัดเรียงแนวตั้ง */
-
-
 .product-caption { font-size: 0.9em; margin-bottom: 10px; }
-.product-image-static { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
 
-/* Image Slider */
-.full-width-item .image-gallery-wrapper { height: 600px; } 
-.full-width-item .gallery-image { height: 100%; }
+/* *** แก้ไข: รูปภาพเดี่ยวให้เต็มกรอบ *** */
+.product-image-static { 
+    width: 100%; 
+    height: 500px; /* กำหนดความสูงตายตัวเพื่อให้เท่ากันทุกชิ้น */
+    object-fit: cover; /* บังคับให้รูปภาพขยายเต็มพื้นที่โดยไม่เสียสัดส่วน (อาจมีการตัดขอบ) */
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
+/* *** แก้ไข: Image Slider ให้เต็มกรอบ *** */
+.image-gallery-wrapper { 
+    width: 100%;
+    height: 500px; /* กำหนดความสูงให้เท่ากับรูปภาพเดี่ยว */
+    margin-bottom: 10px; 
+    overflow-x: scroll; 
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory; 
+    border-radius: 5px; 
+}
+
+.gallery-image { 
+    flex-shrink: 0; 
+    width: 100%; 
+    height: 100%; /* ให้รูปภาพเต็มความสูงของ wrapper */
+    object-fit: cover; /* บังคับให้รูปภาพขยายเต็มพื้นที่ */
+    scroll-snap-align: start; 
+    border-radius: 5px; 
+}
+.image-gallery-wrapper::-webkit-scrollbar { display: none; }
 
 /* Dots Indicator */
 .dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 5px; }
@@ -208,7 +213,7 @@ nav a:hover {
 .dot.active { background-color: #ff4500; }
 
 
-/* --- 5. REVIEW SECTION --- */
+/* --- REVIEW SECTION --- */
 .review-section { background-color: #111; padding: 100px 0; }
 .review-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
 .review-item { background-color: #1a1a1a; padding: 25px; border-radius: 10px; max-width: 350px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s; text-align: left; }
@@ -218,7 +223,7 @@ nav a:hover {
 .reviewer-name { font-weight: bold; color: #f0f0f0; font-size: 0.9em; }
 
 
-/* --- 6. CONTACT & FOOTER SECTION --- */
+/* --- CONTACT & FOOTER SECTION --- */
 #contact { padding: 80px 0; text-align: center; } 
 .contact-grid { display: flex; justify-content: center; gap: 50px; }
 .contact-column { text-align: left; max-width: 400px; padding: 15px; }
@@ -239,17 +244,8 @@ footer {
     .hero-content h2 { font-size: 2.5em; }
     .two-column-layout { flex-direction: column; }
     .two-column-layout .col-image { width: 100%; }
-    
-    /* ในมือถือ สินค้าทั้งหมดกว้าง 90% และเรียงแนวตั้งอยู่แล้ว */
-    .full-width-item, .half-width-item {
-        width: 90%;
-        max-width: 90%;
-        margin: 0 auto 20px auto;
-        padding: 15px;
-    }
-    
-    .product-image-static, .image-gallery-wrapper { height: 300px; }
-
+    .product-item { width: 90%; }
+    .product-image-static, .image-gallery-wrapper { height: 350px; }
     .contact-grid { flex-direction: column; align-items: center; }
     .contact-column { max-width: 90%; width: 100%; text-align: center; }
     #contact h2 { text-align: center; }
@@ -258,4 +254,3 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
-
