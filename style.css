@@ -109,7 +109,8 @@ nav a:hover {
 
 /* --- HERO SECTION --- */
 .full-screen-hero {
-    background: url('https://via.placeholder.com/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
+    /* Placeholder Hero Image - ควรเปลี่ยนเป็นรูป Banner แนวตั้งหรือรูปที่เหมาะสม */
+    background: url('https://via.placeholder.com/1920x1080/1a1a1a/ff4500?text=T-SHIRT+ZONE+HERO') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -123,6 +124,7 @@ nav a:hover {
 .hero-content {
     padding: 30px 50px;
     border-radius: 10px;
+    background-color: rgba(0,0,0,0.3); /* เพิ่มพื้นหลังจางๆ ให้อ่านง่ายขึ้น */
 }
 
 .hero-content h2 {
@@ -152,7 +154,7 @@ nav a:hover {
 .two-column-layout .col-image { flex-shrink: 0; width: 40%; }
 .two-column-layout .col-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
-/* --- PRODUCTS SECTION (จุดที่แก้ไขรูปภาพ) --- */
+/* --- PRODUCTS SECTION (จุดที่แก้ไขสำคัญ) --- */
 .product-grid {
     display: flex;
     flex-wrap: wrap; 
@@ -165,7 +167,7 @@ nav a:hover {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    /* ไม่กำหนด height ตายตัวที่นี่ ปล่อยให้ยืดตามเนื้อหา */
+    /* ลบ height ตายตัวออก ปล่อยให้ยืดตามเนื้อหา */
     overflow: hidden;   
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
@@ -175,40 +177,39 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
 }
 
-.product-caption { font-size: 0.9em; margin-bottom: 10px; }
+.product-caption { font-size: 0.9em; margin-bottom: 15px; }
 
-/* *** แก้ไข: รูปภาพเดี่ยวให้เต็มกรอบ *** */
+/* *** แก้ไข: รูปภาพเดี่ยวให้ปรับความสูงอัตโนมัติ *** */
 .product-image-static { 
     width: 100%; 
-    height: 500px; /* กำหนดความสูงตายตัวเพื่อให้เท่ากันทุกชิ้น */
-    object-fit: cover; /* บังคับให้รูปภาพขยายเต็มพื้นที่โดยไม่เสียสัดส่วน (อาจมีการตัดขอบ) */
+    height: auto; /* เปลี่ยนเป็น auto เพื่อรักษาสัดส่วน */
     border-radius: 5px; 
     margin-bottom: 15px; 
 }
 
-/* *** แก้ไข: Image Slider ให้เต็มกรอบ *** */
+/* *** แก้ไข: Image Slider ให้ปรับความสูงอัตโนมัติ *** */
 .image-gallery-wrapper { 
     width: 100%;
-    height: 500px; /* กำหนดความสูงให้เท่ากับรูปภาพเดี่ยว */
+    /* ลบ height ตายตัวออก */
     margin-bottom: 10px; 
     overflow-x: scroll; 
     overflow-y: hidden; 
     scroll-snap-type: x mandatory; 
     border-radius: 5px; 
+    display: flex; /* เพิ่มเพื่อให้ภายในขยายตามรูป */
 }
 
 .gallery-image { 
     flex-shrink: 0; 
     width: 100%; 
-    height: 100%; /* ให้รูปภาพเต็มความสูงของ wrapper */
-    object-fit: cover; /* บังคับให้รูปภาพขยายเต็มพื้นที่ */
+    height: auto; /* เปลี่ยนเป็น auto */
     scroll-snap-align: start; 
     border-radius: 5px; 
 }
 .image-gallery-wrapper::-webkit-scrollbar { display: none; }
 
 /* Dots Indicator */
-.dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 5px; }
+.dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 10px; }
 .dot { height: 8px; width: 8px; background-color: #555; border-radius: 50%; display: inline-block; margin: 0 4px; transition: background-color 0.3s; }
 .dot.active { background-color: #ff4500; }
 
@@ -245,7 +246,7 @@ footer {
     .two-column-layout { flex-direction: column; }
     .two-column-layout .col-image { width: 100%; }
     .product-item { width: 90%; }
-    .product-image-static, .image-gallery-wrapper { height: 350px; }
+    /* ลบการกำหนดความสูงในมือถือออกด้วย */
     .contact-grid { flex-direction: column; align-items: center; }
     .contact-column { max-width: 90%; width: 100%; text-align: center; }
     #contact h2 { text-align: center; }
