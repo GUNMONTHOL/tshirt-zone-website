@@ -196,11 +196,11 @@ nav a:hover {
 
 
 .product-caption { font-size: 0.9em; margin-bottom: 10px; }
-.product-image-static { width: 100%; height: 450px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+.product-image-static { width: 100%; height: 100%; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
 
 /* Image Slider */
 .full-width-item .image-gallery-wrapper { height: 600px; } 
-.full-width-item .gallery-image { height: 600px; }
+.full-width-item .gallery-image { height: 100%; }
 
 /* Dots Indicator */
 .dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 5px; }
@@ -258,3 +258,4 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
+
