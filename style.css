@@ -1,10 +1,9 @@
-/* --- BASE SETUP & FONT (ใช้ฟอนต์พื้นฐานที่ดูทันสมัย) --- */
+/* --- BASE SETUP & FONT --- */
 body {
-    /* เปลี่ยน font-family ให้เป็นฟอนต์ที่ดูทันสมัยและเป็นสากล */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d0d0d; /* พื้นหลังสีดำเข้ม */
+    background-color: #0d0d0d;
     color: #f0f0f0;
     line-height: 1.6;
     scroll-behavior: smooth; 
@@ -18,7 +17,7 @@ body {
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0; /* เพิ่ม Padding ให้ Section ดูมีพื้นที่มากขึ้น */
     text-align: center;
 }
 
@@ -26,8 +25,8 @@ h2 {
     font-size: 2.8em;
     margin-bottom: 40px;
     color: #ff4500;
-    font-weight: 700; /* ทำให้ตัวหนาขึ้น */
-    letter-spacing: 1.5px; /* เพิ่มระยะห่างตัวอักษรเล็กน้อย */
+    font-weight: 700; 
+    letter-spacing: 1.5px;
 }
 
 /* --- BUTTONS --- */
@@ -35,9 +34,9 @@ h2 {
     display: inline-block;
     background-color: #ff4500;
     color: #111;
-    padding: 14px 35px; /* ทำให้ปุ่มใหญ่ขึ้น */
+    padding: 14px 35px;
     text-decoration: none;
-    border-radius: 5px; /* เปลี่ยนเป็นเหลี่ยมมนแทนโค้งมาก */
+    border-radius: 5px; 
     margin-top: 30px;
     font-weight: 600;
     font-size: 1.2em;
@@ -47,11 +46,11 @@ h2 {
 
 .btn:hover {
     background-color: #e63900;
-    transform: translateY(-2px); /* มีมิติเล็กน้อย */
+    transform: translateY(-2px);
 }
 
 .btn-small {
-    background-color: #333; /* สีพื้นหลังปุ่มเล็ก */
+    background-color: #333; 
     color: #f0f0f0;
     padding: 8px 15px;
     text-decoration: none;
@@ -73,7 +72,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0; /* เพิ่ม padding ด้านบนให้เมนูใหญ่ขึ้น */
+    padding: 20px 0;
     background-color: transparent;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -85,15 +84,21 @@ header.scrolled {
 
 header h1 {
     margin: 0;
-    font-size: 1.8em; /* ทำให้โลโก้ใหญ่ขึ้น */
+    font-size: 1.8em;
     color: #f0f0f0;
     font-weight: 700;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
     color: #f0f0f0;
     text-decoration: none;
-    margin-left: 30px; /* เพิ่มระยะห่างเมนู */
+    margin-left: 30px;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -104,7 +109,8 @@ nav a:hover {
 
 /* --- 2. HERO SECTION (Full Screen) --- */
 .full-screen-hero {
-    background: url('https://img2.pic.in.th/pic/92abba56d3006c2df.png/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
+    /* เปลี่ยน URL รูปภาพด้านล่างเป็นรูปภาพแบนเนอร์เต็มจอของคุณ */
+    background: url('https://via.placeholder.com/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -116,19 +122,17 @@ nav a:hover {
 }
 
 .hero-content {
-    /* เอาพื้นหลังทึบออก เพื่อให้ดูโปร่งเหมือน Style-Craft */
-    /* background: rgba(0, 0, 0, 0.4); */ 
     padding: 30px 50px;
     border-radius: 10px;
 }
 
 .hero-content h2 {
-    font-size: 4em; /* ทำให้หัวข้อใหญ่ขึ้นมาก */
+    font-size: 4em;
     margin: 10px 0;
     color: #f0f0f0;
     font-weight: 800;
     letter-spacing: 2px;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* เพิ่มเงาให้ข้อความชัดเจน */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 
 .hero-content p {
@@ -149,24 +153,27 @@ nav a:hover {
 .two-column-layout .col-image { flex-shrink: 0; width: 40%; }
 .two-column-layout .col-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 
-
 /* --- 4. PRODUCTS SECTION --- */
-.product-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: center;
+}
+
 .product-item {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
-    
     width: 300px;
     height: 750px;
     overflow: hidden;   
-    
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
 }
 
 .product-item:hover {
-    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3); /* เพิ่มเงาสีส้มเมื่อโฮเวอร์ */
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
 }
 
 .product-caption { font-size: 0.9em; margin-bottom: 10px; }
@@ -186,16 +193,17 @@ nav a:hover {
 
 
 /* --- 5. REVIEW SECTION --- */
-.review-section { background-color: #111; padding: 80px 0; }
+.review-section { background-color: #111; padding: 100px 0; }
+.review-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
 .review-item { background-color: #1a1a1a; padding: 25px; border-radius: 10px; max-width: 350px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s; text-align: left; }
-.review-item:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255, 69, 0, 0.2); } /* เพิ่มเงาสีส้ม */
+.review-item:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255, 69, 0, 0.2); }
 .rating { color: #ffd700; font-size: 1.4em; margin-bottom: 15px; text-align: center;}
 .review-text { font-style: italic; margin-bottom: 15px; color: #ccc; }
 .reviewer-name { font-weight: bold; color: #f0f0f0; font-size: 0.9em; }
 
 
 /* --- 6. CONTACT & FOOTER SECTION --- */
-#contact { padding: 60px 0; text-align: center; } 
+#contact { padding: 80px 0; text-align: center; } 
 .contact-grid { display: flex; justify-content: center; gap: 50px; }
 .contact-column { text-align: left; max-width: 400px; padding: 15px; }
 
@@ -204,7 +212,7 @@ nav a:hover {
 
 footer {
     background-color: #000;
-    padding: 20px 0; /* เพิ่ม padding ให้ Footer ดูใหญ่ขึ้น */
+    padding: 20px 0;
     font-size: 0.9em;
     text-align: center;
 }
@@ -226,4 +234,3 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
-
