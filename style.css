@@ -1,31 +1,87 @@
-/* การตั้งค่าพื้นฐาน */
+/* --- BASE SETUP --- */
 body {
-    font-family: sans-serif; /* ใช้ฟอนต์ที่อ่านง่าย */
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111; /* พื้นหลังสีดำเข้ม */
-    color: #f0f0f0; /* ตัวอักษรสีขาวสว่าง */
+    background-color: #0a0a0a; /* Darker background */
+    color: #f0f0f0;
     line-height: 1.6;
+    scroll-behavior: smooth; /* ทำให้เลื่อนไป Section ต่างๆ นุ่มนวลขึ้น */
 }
 
 .container {
     width: 90%;
-    max-width: 1200px; /* จำกัดความกว้างไม่ให้ยืดเกินไป */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
-/* ส่วนหัว (Header) และ Navigation */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ff4500;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    background-color: #ff4500;
+    color: #111;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* ทำให้ปุ่มโค้งมน */
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e63900;
+}
+
+.btn-small {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    display: inline-block; 
+    margin-top: 15px;
+}
+
+.btn-small:hover {
+    background-color: #ff4500;
+}
+
+/* --- 1. HEADER & NAVIGATION (Transparent Style) --- */
 header {
-    background-color: #000; /* สีดำสนิทสำหรับ Header */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed; /* ยึด Header ไว้ด้านบน */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: transparent; /* เริ่มต้นด้วยความโปร่งใส */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+    background-color: #111; /* เปลี่ยนเป็นสีดำเมื่อเลื่อนลง */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
-    color: #ff4500; /* ใช้สีส้มเข้ม (OrangeRed) เป็นสีเน้น */
+    font-size: 1.5em;
+    color: #f0f0f0;
 }
 
 header .container {
@@ -37,95 +93,164 @@ header .container {
 nav a {
     color: #f0f0f0;
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 25px;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #ff4500; /* เปลี่ยนสีเมื่อเอาเมาส์มาวาง */
-}
-
-/* ส่วน Section ทั่วไป */
-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
     color: #ff4500;
 }
 
-/* ปุ่ม (Buttons) */
-.btn {
-    display: inline-block;
-    background-color: #ff4500;
-    color: #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #e63900;
-}
-
-.btn-small {
-    /* ปุ่มเล็กสำหรับใน Product Item */
-    background-color: #444;
+/* --- 2. HERO SECTION (Full Screen) --- */
+.full-screen-hero {
+    /* คุณสามารถเปลี่ยน URL รูปภาพด้านล่างเป็นรูปภาพแบนเนอร์เต็มจอของคุณได้ */
+    background: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=T-SHIRT+ZONE+HERO') no-repeat center center/cover;
+    height: 100vh; /* เต็มความสูงหน้าจอ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: #f0f0f0;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
+    position: relative;
+    /* เพิ่ม Overlay เล็กน้อยให้ข้อความอ่านง่ายขึ้น */
+    background-attachment: fixed; /* ทำให้ภาพนิ่งเมื่อเลื่อน (Parallax effect) */
 }
 
-.btn-small:hover {
-    background-color: #ff4500;
+.hero-content {
+    background: rgba(0, 0, 0, 0.4); /* เพิ่มเงาดำด้านหลังข้อความ */
+    padding: 30px 50px;
+    border-radius: 10px;
 }
 
-/* ส่วน Hero (About) */
-.hero {
-    background-color: #000;
-    padding: 80px 0;
+.hero-content h2 {
+    font-size: 3.5em;
+    margin: 10px 0;
+    color: #f0f0f0; /* ข้อความหลักสีขาว */
 }
 
-/* ส่วน Grid สินค้า (Product Grid) */
+.hero-content p {
+    font-size: 1.2em;
+    color: #ff4500;
+}
+
+/* --- 3. ABOUT SECTION (2 Columns) --- */
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    align-items: center;
+}
+
+.two-column-layout .col-content {
+    flex: 1;
+}
+
+.two-column-layout .col-image {
+    flex-shrink: 0;
+    width: 40%;
+}
+
+.two-column-layout .col-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 4. PRODUCTS SECTION --- */
 .product-grid {
     display: flex;
-    flex-wrap: wrap; /* ทำให้สินค้าขึ้นบรรทัดใหม่เมื่อหน้าจอแคบ */
-    gap: 20px;
+    flex-wrap: wrap; 
+    gap: 30px;
     justify-content: center;
 }
 
 .product-item {
-    background-color: #222;
+    background-color: #1a1a1a;
     padding: 20px;
-    border-radius: 8px;
-    width: 600px; /* กำหนดความกว้างของแต่ละสินค้า */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    
+    /* ขนาดสินค้า */
+    width: 300px;       /* เพิ่มความกว้างให้ดูสมส่วนขึ้น */
+    height: 750px;      /* ปรับความสูงให้รองรับรูปภาพและข้อความ */
+    overflow: hidden;   
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.product-item h3 {
-    color: #ff4500;
+.product-caption {
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
-/* ส่วนติดต่อ (Contact) */
-#contact a {
-    color: #ff4500;
-    text-decoration: none;
+.product-image-static { /* สำหรับสินค้าที่ไม่มี Slider */
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-#contact a:hover {
-    text-decoration: underline;
+/* Image Slider (สินค้าชิ้นแรก) */
+.image-gallery-wrapper {
+    height: 500px; 
+    width: 100%;
+    margin-bottom: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory; 
+    border-radius: 5px;
 }
 
-/* ส่วนท้าย (Footer) */
+.image-gallery {
+    display: flex;
+    height: 100%;
+}
+
+.gallery-image {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    scroll-snap-align: start; 
+    border-radius: 5px;
+}
+.image-gallery-wrapper::-webkit-scrollbar { display: none; }
+
+/* Dots Indicator */
+.dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 5px; }
+.dot { height: 8px; width: 8px; background-color: #555; border-radius: 50%; display: inline-block; margin: 0 4px; transition: background-color 0.3s; }
+.dot.active { background-color: #ff4500; }
+
+
+/* --- 5. REVIEW SECTION --- */
+.review-section { background-color: #111; padding: 80px 0; }
+.review-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.review-item { background-color: #1a1a1a; padding: 25px; border-radius: 10px; max-width: 350px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s; text-align: left; }
+.review-item:hover { transform: translateY(-5px); }
+.rating { color: #ffd700; font-size: 1.4em; margin-bottom: 15px; text-align: center;}
+.review-text { font-style: italic; margin-bottom: 15px; color: #ccc; }
+.reviewer-name { font-weight: bold; color: #f0f0f0; font-size: 0.9em; }
+
+
+/* --- 6. CONTACT & FOOTER SECTION --- */
+#contact { padding: 40px 0; text-align: center; } /* ทำให้ Section ติดต่ออยู่กึ่งกลาง */
+.contact-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 50px; 
+}
+.contact-column {
+    text-align: left;
+    max-width: 400px;
+    padding: 15px;
+}
+
+/* ปรับให้ข้อความติดต่ออยู่กึ่งกลาง */
+#contact h2 { text-align: left; }
+.contact-column a { color: #ff4500 !important; }
+
 footer {
     background-color: #000;
     padding: 15px 0;
@@ -133,162 +258,37 @@ footer {
     text-align: center;
 }
 
-/* Media Queries: สำหรับการปรับให้เข้ากับมือถือ */
-@media (max-width: 600px) {
-    header .container {
-        flex-direction: column; /* ให้ Nav อยู่ใต้ H1 ในหน้าจอมือถือ */
-    }
-
-    nav {
-        margin-top: 10px;
-    }
-
-    nav a {
-        display: block; /* ให้ลิงก์เรียงเป็นแนวตั้ง */
-        margin: 5px 0;
-    }
-
-    .product-item {
-        width: 100%; /* ให้สินค้าเต็มความกว้างในมือถือ */
-    }
-    /* --- โค้ดสำหรับ Image Slider (Gallery) --- */
-
-.image-gallery-wrapper {
-    /* กำหนดความสูงของพื้นที่ดูภาพ */
-    height: 400px; /* ปรับความสูงของกรอบดูภาพ */
-    width: 100%;
-    margin-bottom: 10px;
-    overflow-x: scroll; /* ทำให้เลื่อนแนวนอนได้ */
-    overflow-y: hidden; /* ซ่อน Scrollbar แนวตั้ง */
-    scroll-snap-type: x mandatory; /* ทำให้ภาพหยุดนิ่งเมื่อเลื่อน */
-    border-radius: 5px;
-}
-
-.image-gallery {
-    display: flex; /* จัดเรียงรูปภาพเป็นแถวเดียวแนวนอน */
-    height: 100%;
-}
-
-.gallery-image {
-    flex-shrink: 0; /* ป้องกันไม่ให้รูปภาพหดตัว */
-    width: 100%; /* ให้รูปภาพแต่ละรูปเต็มความกว้างของ Wrapper */
-    height: 100%;
-    object-fit: cover; /* ครอบคลุมพื้นที่และตัดส่วนที่เกินไป */
-    scroll-snap-align: start; /* กำหนดจุดหยุดของภาพเมื่อเลื่อน */
-    border-radius: 5px;
-}
-
-/* ซ่อน Scrollbar ที่ไม่สวยงาม (สำหรับ Chrome/Safari) */
-.image-gallery-wrapper::-webkit-scrollbar {
-    display: none;
-
-    /* --- CSS สำหรับส่วนรีวิวจากลูกค้า --- */
-.review-section {
-    background-color: #0d0d0d; /* พื้นหลังสีดำเข้มกว่าเดิมเล็กน้อย */
-    padding: 80px 0;
-}
-
-.review-section h2 {
-    color: #ff4500; /* ใช้สีเน้น */
-    margin-bottom: 40px;
-}
-
-.review-grid {
-    display: flex; /* เปิดใช้งาน Flexbox เพื่อจัดเรียงกล่องรีวิว */
-    flex-wrap: wrap; 
-    gap: 30px; /* ระยะห่างระหว่างกล่อง */
-    justify-content: center;
-}
-
-.review-item {
-    background-color: #1a1a1a; /* สีพื้นหลังกล่องรีวิว */
-    padding: 25px;
-    border-radius: 10px;
-    max-width: 350px; /* กำหนดความกว้างสูงสุดของแต่ละกล่อง */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-    text-align: center;
-}
-
-.review-item:hover {
-    transform: translateY(-5px); /* ทำให้กล่องเด้งขึ้นเล็กน้อยเมื่อชี้เมาส์ */
-}
-
-.rating {
-    color: #ffd700; /* สีดาว (สีทอง) */
-    font-size: 1.4em;
-    margin-bottom: 15px;
-}
-
-.review-text {
-    font-style: italic;
-    margin-bottom: 15px;
-    color: #ccc;
-}
-
-.reviewer-name {
-    font-weight: bold;
-    color: #f0f0f0;
-    font-size: 0.9em;
-}
-
-/* ปรับให้เป็นแนวตั้งในหน้าจอมือถือ */
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-    .review-grid {
-        flex-direction: column;
-        align-items: center;
+    .full-screen-hero {
+        height: 70vh;
     }
-    .review-item {
-        max-width: 90%;
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .two-column-layout {
+        flex-direction: column;
+    }
+    .two-column-layout .col-image {
         width: 100%;
     }
-/* --- CSS สำหรับจัดเรียงส่วนติดต่อและเกี่ยวกับเรา (2 คอลัมน์) --- */
-
-#contact {
-    /* เอา text-align: center ออก เพื่อให้ข้อความอยู่ทางซ้ายมือ */
-    text-align: left; 
-}
-
-#contact h2 {
-    text-align: center;
-}
-
-.contact-grid {
-    display: flex; /* เปิดใช้งาน Flexbox */
-    flex-wrap: wrap; 
-    justify-content: space-around; /* จัดให้อยู่ระหว่างกลาง */
-    gap: 40px;
-    padding-top: 20px;
-}
-
-.about-us-column, .contact-column {
-    flex: 1; /* ทำให้คอลัมน์ยืดได้เท่ากัน */
-    min-width: 300px; /* ความกว้างขั้นต่ำ */
-    max-width: 45%;
-    padding: 15px;
-    background-color: #1a1a1a; /* พื้นหลังเล็กน้อยให้ดูแตกต่าง */
-    border-radius: 8px;
-}
-
-/* ทำให้ Link ในส่วนติดต่อเป็นสีเน้น */
-.contact-column a {
-    color: #ff4500 !important;
-}
-
-/* ปรับให้เป็นแนวตั้งในหน้าจอมือถือ */
-@media (max-width: 768px) {
+    .product-item {
+        width: 90%;
+        height: auto;
+    }
+    .product-image-static, .image-gallery-wrapper {
+        height: 350px;
+    }
     .contact-grid {
         flex-direction: column;
         align-items: center;
     }
-    .about-us-column, .contact-column {
+    .contact-column {
         max-width: 90%;
         width: 100%;
-        margin-bottom: 20px;
+        text-align: center;
+    }
+    #contact h2 {
+        text-align: center;
     }
 }
-
-
-
-
-
