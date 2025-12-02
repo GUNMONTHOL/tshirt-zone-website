@@ -181,7 +181,69 @@ footer {
 /* ซ่อน Scrollbar ที่ไม่สวยงาม (สำหรับ Chrome/Safari) */
 .image-gallery-wrapper::-webkit-scrollbar {
     display: none;
+
+    /* --- CSS สำหรับส่วนรีวิวจากลูกค้า --- */
+.review-section {
+    background-color: #0d0d0d; /* พื้นหลังสีดำเข้มกว่าเดิมเล็กน้อย */
+    padding: 80px 0;
 }
+
+.review-section h2 {
+    color: #ff4500; /* ใช้สีเน้น */
+    margin-bottom: 40px;
+}
+
+.review-grid {
+    display: flex; /* เปิดใช้งาน Flexbox เพื่อจัดเรียงกล่องรีวิว */
+    flex-wrap: wrap; 
+    gap: 30px; /* ระยะห่างระหว่างกล่อง */
+    justify-content: center;
+}
+
+.review-item {
+    background-color: #1a1a1a; /* สีพื้นหลังกล่องรีวิว */
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 350px; /* กำหนดความกว้างสูงสุดของแต่ละกล่อง */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.review-item:hover {
+    transform: translateY(-5px); /* ทำให้กล่องเด้งขึ้นเล็กน้อยเมื่อชี้เมาส์ */
+}
+
+.rating {
+    color: #ffd700; /* สีดาว (สีทอง) */
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 0.9em;
+}
+
+/* ปรับให้เป็นแนวตั้งในหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .review-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-item {
+        max-width: 90%;
+        width: 100%;
+    }
+}
+
 
 
 
