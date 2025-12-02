@@ -104,7 +104,7 @@ nav a:hover {
 
 /* --- 2. HERO SECTION (Full Screen) --- */
 .full-screen-hero {
-    background: url('https://via.placeholder.com/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
+    background: url('https://img2.pic.in.th/pic/92abba56d3006c2df.png/1920x1080/0d0d0d/FFFFFF?text=T-SHIRT+ZONE+HERO+BANNER') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -226,3 +226,4 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
+
