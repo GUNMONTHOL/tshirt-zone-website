@@ -242,7 +242,52 @@ footer {
         max-width: 90%;
         width: 100%;
     }
+/* --- CSS สำหรับจัดเรียงส่วนติดต่อและเกี่ยวกับเรา (2 คอลัมน์) --- */
+
+#contact {
+    /* เอา text-align: center ออก เพื่อให้ข้อความอยู่ทางซ้ายมือ */
+    text-align: left; 
 }
+
+#contact h2 {
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex; /* เปิดใช้งาน Flexbox */
+    flex-wrap: wrap; 
+    justify-content: space-around; /* จัดให้อยู่ระหว่างกลาง */
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.about-us-column, .contact-column {
+    flex: 1; /* ทำให้คอลัมน์ยืดได้เท่ากัน */
+    min-width: 300px; /* ความกว้างขั้นต่ำ */
+    max-width: 45%;
+    padding: 15px;
+    background-color: #1a1a1a; /* พื้นหลังเล็กน้อยให้ดูแตกต่าง */
+    border-radius: 8px;
+}
+
+/* ทำให้ Link ในส่วนติดต่อเป็นสีเน้น */
+.contact-column a {
+    color: #ff4500 !important;
+}
+
+/* ปรับให้เป็นแนวตั้งในหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-us-column, .contact-column {
+        max-width: 90%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
 
 
 
