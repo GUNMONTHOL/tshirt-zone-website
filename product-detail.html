@@ -82,7 +82,57 @@
 
             <div style="text-align: center; margin-top: 40px;">
                 <p class="price">ราคา: XXX บาท</p>
-                <a href="#" class="btn" style="background-color: #00ff7f; color: #111;">สั่งซื้อผ่าน Line / ทักแชท</a>
+<div class="quick-order-box">
+    <h3>สั่งซื้อด่วน</h3>
+    
+    <div class="input-row">
+        <div class="input-group">
+            <label for="color-select">สี</label>
+            <select id="color-select">
+                <option value="ขาว">ขาว</option>
+                <option value="ดำ">ดำ</option>
+                <option value="แดง">แดง</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <label for="size-select">ไซส์</label>
+            <select id="size-select">
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="2XL">2XL</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="input-row">
+        <div class="input-group">
+            <label for="quantity-input">จำนวน</label>
+            <input type="number" id="quantity-input" value="1" min="1">
+        </div>
+        
+        <div class="input-group">
+            <label>ราคาต่อหน่วย</label>
+            <input type="text" value="฿390" readonly>
+        </div>
+    </div>
+    
+    <div class="price-summary">
+        <p class="stock-status">สต็อก: หมดชั่วคราว</p>
+        <p class="total-price-label">ราคารวม: <span class="total-price">฿390</span></p>
+    </div>
+    
+    <div class="button-row">
+        <a href="https://line.me/ti/p/~@TSZ_Official" target="_blank" class="chat-order-btn">
+            <img src="https://via.placeholder.com/20/FFFFFF?text=🛒" alt="ตะกร้า" style="vertical-align: middle;"> แชทสั่งซื้อ
+        </a>
+        
+        <button class="copy-text-btn">คัดลอกข้อความ</button>
+    </div>
+    
+    <p class="line-note">"แชทสั่งซื้อ" จะส่งข้อมูลสินค้าที่เลือกไปยัง LINE OA ของเราโดยอัตโนมัติ (สมมติตามภาพ)</p>
+</div>
             </div>
             
         </div>
@@ -95,4 +145,5 @@
     </footer>
 
 </body>
+
 </html>
