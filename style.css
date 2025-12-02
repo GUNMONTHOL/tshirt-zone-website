@@ -190,7 +190,7 @@ nav a:hover {
 /* *** แก้ไข: Image Slider ให้ปรับความสูงอัตโนมัติ *** */
 .image-gallery-wrapper { 
     width: 100%;
-    /* ลบ height ตายตัวออก */
+    height: 1040px;
     margin-bottom: 10px; 
     overflow-x: scroll; 
     overflow-y: hidden; 
@@ -255,4 +255,5 @@ footer {
     nav a { margin-left: 15px; }
     .btn { padding: 10px 25px; font-size: 1em; }
 }
+
 
