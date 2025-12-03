@@ -320,7 +320,64 @@ footer {
     .action-buttons { flex-direction: column; }
     .quick-order-card-standalone { width: 90%; }
 }
+    /* --- Policy Info Section Style --- */
+.policy-info-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* พื้นหลังส่วนนี้เป็นสีขาวตามภาพ */
+    color: #000; /* ตัวอักษรสีดำ */
 }
+
+.policy-main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000;
+    text-align: left; /* จัดชิดซ้ายตามภาพ */
+}
+
+.policy-grid {
+    display: flex;
+    gap: 20px; /* ระยะห่างระหว่างกล่อง */
+    flex-wrap: wrap;
+}
+
+.policy-card {
+    flex: 1; /* ให้ทุกกล่องกว้างเท่ากัน */
+    min-width: 300px; /* ความกว้างขั้นต่ำ */
+    background-color: #fff;
+    border: 1px solid #e5e7eb; /* เส้นขอบสีเทาอ่อน */
+    border-radius: 12px; /* ขอบมน */
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* เงาบางๆ */
+    text-align: left;
+}
+
+.policy-card h4 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.policy-card p {
+    font-size: 1rem;
+    color: #4b5563; /* สีเทาเข้ม */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .policy-grid {
+        flex-direction: column; /* เรียงแนวตั้งในมือถือ */
+    }
+    .policy-main-title {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
+
 
 
 
