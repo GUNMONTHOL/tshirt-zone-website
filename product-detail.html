@@ -123,13 +123,53 @@
         <p class="total-price-label">ราคารวม: <span class="total-price">฿390</span></p>
     </div>
     
-    <div class="button-row">
-        <a href="https://line.me/ti/p/~@TSZ_Official" target="_blank" class="chat-order-btn">
-            <img src="https://via.placeholder.com/20/FFFFFF?text=🛒" alt="ตะกร้า" style="vertical-align: middle;"> แชทสั่งซื้อ
-        </a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="quick-order-card">
+    <h3 class="qo-title">สั่งซื้อด่วน</h3>
+
+    <div class="qo-row">
+        <div class="qo-group">
+            <label>สี</label>
+            <select>
+                <option>สีขาว</option>
+                <option>สีดำ</option>
+            </select>
+        </div>
+        <div class="qo-group">
+            <label>ไซส์</label>
+            <select>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+        </div>
     </div>
-    
-    <p class="line-note">"แชทสั่งซื้อ" จะส่งข้อมูลสินค้าที่เลือกไปยัง LINE OA ของเราโดยอัตโนมัติ (สมมติตามภาพ)</p>
+
+    <div class="qo-row">
+        <div class="qo-group">
+            <label>จำนวน</label>
+            <input type="number" value="3" min="1">
+        </div>
+        <div class="qo-group">
+            <label>ราคาต่อหน่วย</label>
+            <input type="text" value="฿390" readonly class="qo-readonly">
+        </div>
+    </div>
+
+    <div class="qo-summary">
+        <span class="qo-stock">สต็อก: หมดชั่วคราว</span>
+        <span class="qo-total">ราคารวม: ฿1,170</span>
+    </div>
+
+    <div class="qo-buttons">
+        <a href="https://line.me/ti/p/~@TSZ_Official" target="_blank" class="qo-btn-chat">
+            <i class="fas fa-shopping-cart"></i> แชทสั่งซื้อ
+        </a>
+        <button class="qo-btn-copy">คัดลอกข้อความ</button>
+    </div>
+
+    <p class="qo-note">"แชทสั่งซื้อ" จะส่งข้อมูลสินค้าที่เลือกไปยัง LINE OA ของเราอัตโนมัติ</p>
 </div>
             </div>
             
@@ -145,4 +185,5 @@
 </body>
 
 </html>
+
 
