@@ -1,99 +1,260 @@
-/* --- BASE SETUP --- */
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #0d0d0d; color: #f0f0f0; line-height: 1.6; }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px 0; }
-section { padding: 80px 0; text-align: center; }
-h2 { font-size: 2.5em; margin-bottom: 40px; color: #ff4500; font-weight: 700; }
+/* --- BASE SETUP & FONT --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
+    scroll-behavior: smooth; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #ff4500;
+    font-weight: 700; 
+    letter-spacing: 1.5px;
+}
 
 /* --- BUTTONS --- */
-.btn { display: inline-block; background-color: #ff4500; color: #111; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-.btn:hover { background-color: #e63900; transform: translateY(-2px); }
-.btn-small { background-color: #00ff7f; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 10px; }
-.btn-small:hover { background-color: #00e673; }
-
-/* --- HEADER --- */
-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; background-color: rgba(0,0,0,0.9); transition: 0.3s; }
-header h1 { margin: 0; font-size: 1.5em; color: #ff4500; }
-header .container { display: flex; justify-content: space-between; align-items: center; }
-nav a { color: #f0f0f0; text-decoration: none; margin-left: 20px; transition: 0.3s; }
-nav a:hover { color: #ff4500; }
-
-/* --- HERO --- */
-.full-screen-hero { background: url('https://via.placeholder.com/1920x1080/111/333?text=BANNER') center/cover no-repeat; height: 80vh; display: flex; align-items: center; justify-content: center; }
-.hero-content { background: rgba(0,0,0,0.6); padding: 40px; border-radius: 10px; }
-.hero-content h2 { font-size: 3em; margin: 10px 0; color: #fff; }
-
-/* --- PRODUCTS SECTION --- */
-.product-item { background-color: #1a1a1a; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin-bottom: 40px; text-align: left; }
-
-/* *** Featured Layout (สินค้าชิ้นแรกแบ่งครึ่ง) *** */
-.featured-layout { 
-    display: flex; 
-    flex-wrap: wrap; /* ให้ตกบรรทัดเมื่อจอเล็ก */
-    width: 100%; 
-    max-width: 1000px;
-    margin: 0 auto;
+.btn {
+    display: inline-block;
+    background-color: #ff4500;
+    color: #111;
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: 5px; 
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid #ff4500;
 }
-.featured-image-side { 
-    flex: 1 1 500px; /* ขยายได้ หดได้ ฐาน 500px */
+
+.btn:hover {
+    background-color: #e63900;
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    background-color: #333; 
+    color: #f0f0f0;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    display: inline-block; 
+    margin-top: 15px;
+}
+
+.btn-small:hover {
+    background-color: #ff4500;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: transparent;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
-.featured-info-side { 
-    flex: 1 1 400px; 
-    padding: 30px; 
+
+header.scrolled {
+    background-color: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #f0f0f0;
+    font-weight: 700;
+}
+
+header .container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4500;
+}
+
+/* --- HERO SECTION --- */
+.full-screen-hero {
+    /* Placeholder Hero Image - ควรเปลี่ยนเป็นรูป Banner แนวตั้งหรือรูปที่เหมาะสม */
+    background: url('https://via.placeholder.com/1920x1080/1a1a1a/ff4500?text=T-SHIRT+ZONE+HERO') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f0f0f0;
+    position: relative;
+    background-attachment: fixed; 
+}
+
+.hero-content {
+    padding: 30px 50px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.3); /* เพิ่มพื้นหลังจางๆ ให้อ่านง่ายขึ้น */
+}
+
+.hero-content h2 {
+    font-size: 4em;
+    margin: 10px 0;
+    color: #f0f0f0;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    color: #ff4500;
+    font-weight: 600;
+}
+
+/* --- ABOUT SECTION --- */
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    align-items: center;
+}
+
+.two-column-layout .col-content { flex: 1; }
+.two-column-layout .col-image { flex-shrink: 0; width: 40%; }
+.two-column-layout .col-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+
+/* --- PRODUCTS SECTION (จุดที่แก้ไขสำคัญ) --- */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
     justify-content: center;
 }
-.featured-info-side h3 { font-size: 2em; margin-top: 0; color: #ff4500; }
-.product-desc { color: #ccc; margin-bottom: 15px; }
 
-/* Image Slider */
-.image-gallery-wrapper { width: 100%; height: auto; overflow-x: scroll; display: flex; scroll-snap-type: x mandatory; }
-.image-gallery-wrapper::-webkit-scrollbar { display: none; }
-.gallery-image { min-width: 100%; height: auto; object-fit: contain; scroll-snap-align: start; }
-.dots-indicator { text-align: center; padding: 10px; background: #111; }
-.dot { height: 10px; width: 10px; background: #555; border-radius: 50%; display: inline-block; margin: 0 5px; }
-.dot.active { background: #ff4500; }
-
-/* *** Quick Order Form (หน้าแรก) *** */
-.quick-order-box-home {
-    background-color: #252525;
+.product-item {
+    background-color: #1a1a1a;
     padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    border: 1px solid #333;
+    border-radius: 10px;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;   
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s;
 }
-.input-row { display: flex; gap: 15px; margin-bottom: 15px; }
-.input-group { flex: 1; }
-.input-group label { display: block; font-size: 0.9em; margin-bottom: 5px; color: #aaa; }
-.input-group select, .input-group input { 
-    width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #444; 
-    background: #333; color: #fff; 
+
+.product-item:hover {
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.3);
 }
-.chat-order-btn-home {
-    display: block; width: 100%; padding: 12px; 
-    background-color: #06c755; /* สี LINE */
-    color: #fff; text-align: center; text-decoration: none; 
-    font-weight: bold; border-radius: 5px; font-size: 1.1em;
+
+.product-caption { font-size: 0.9em; margin-bottom: 15px; }
+
+/* *** แก้ไข: รูปภาพเดี่ยวให้ปรับความสูงอัตโนมัติ *** */
+.product-image-static { 
+    width: 100%; 
+    height: auto; /* เปลี่ยนเป็น auto เพื่อรักษาสัดส่วน */
+    border-radius: 5px; 
+    margin-bottom: 15px; 
 }
-.chat-order-btn-home:hover { background-color: #05b34c; }
 
-/* *** สินค้าชิ้นที่ 2-3 (แนวตั้ง) *** */
-.product-grid-vertical { display: flex; flex-direction: column; align-items: center; width: 100%; }
-.vertical-item { width: 100%; max-width: 600px; text-align: center; }
-.product-image-static { width: 100%; height: auto; display: block; }
-.product-content { padding: 25px; }
+/* *** แก้ไข: Image Slider ให้ปรับความสูงอัตโนมัติ *** */
+.image-gallery-wrapper { 
+    width: 100%;
+    height: 1040px;
+    margin-bottom: 10px; 
+    overflow-x: scroll; 
+    overflow-y: hidden; 
+    scroll-snap-type: x mandatory; 
+    border-radius: 5px; 
+    display: flex; /* เพิ่มเพื่อให้ภายในขยายตามรูป */
+}
 
-/* --- ABOUT & FOOTER --- */
-.two-column-layout { display: flex; gap: 40px; text-align: left; align-items: center; }
-.col-content { flex: 1; }
-.col-image { flex-shrink: 0; width: 40%; }
-.col-image img { max-width: 100%; border-radius: 8px; }
-footer { background: #000; padding: 20px 0; font-size: 0.9em; color: #888; }
+.gallery-image { 
+    flex-shrink: 0; 
+    width: 100%; 
+    height: auto; /* เปลี่ยนเป็น auto */
+    scroll-snap-align: start; 
+    border-radius: 5px; 
+}
+.image-gallery-wrapper::-webkit-scrollbar { display: none; }
 
-/* --- MOBILE --- */
+/* Dots Indicator */
+.dots-indicator { text-align: center; margin-top: 10px; margin-bottom: 10px; }
+.dot { height: 8px; width: 8px; background-color: #555; border-radius: 50%; display: inline-block; margin: 0 4px; transition: background-color 0.3s; }
+.dot.active { background-color: #ff4500; }
+
+
+/* --- REVIEW SECTION --- */
+.review-section { background-color: #111; padding: 100px 0; }
+.review-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.review-item { background-color: #1a1a1a; padding: 25px; border-radius: 10px; max-width: 350px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); transition: transform 0.3s; text-align: left; }
+.review-item:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(255, 69, 0, 0.2); }
+.rating { color: #ffd700; font-size: 1.4em; margin-bottom: 15px; text-align: center;}
+.review-text { font-style: italic; margin-bottom: 15px; color: #ccc; }
+.reviewer-name { font-weight: bold; color: #f0f0f0; font-size: 0.9em; }
+
+
+/* --- CONTACT & FOOTER SECTION --- */
+#contact { padding: 80px 0; text-align: center; } 
+.contact-grid { display: flex; justify-content: center; gap: 50px; }
+.contact-column { text-align: left; max-width: 400px; padding: 15px; }
+
+#contact h2 { text-align: left; }
+.contact-column a { color: #ff4500 !important; }
+
+footer {
+    background-color: #000;
+    padding: 20px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
-    .featured-layout, .two-column-layout { flex-direction: column; }
-    .featured-image-side, .featured-info-side, .col-image { width: 100%; }
-    .hero-content h2 { font-size: 2em; }
+    .full-screen-hero { height: 60vh; }
+    .hero-content h2 { font-size: 2.5em; }
+    .two-column-layout { flex-direction: column; }
+    .two-column-layout .col-image { width: 100%; }
+    .product-item { width: 90%; }
+    /* ลบการกำหนดความสูงในมือถือออกด้วย */
+    .contact-grid { flex-direction: column; align-items: center; }
+    .contact-column { max-width: 90%; width: 100%; text-align: center; }
+    #contact h2 { text-align: center; }
+    
+    header h1 { font-size: 1.5em; }
+    nav a { margin-left: 15px; }
+    .btn { padding: 10px 25px; font-size: 1em; }
 }
+
+
+
