@@ -395,7 +395,56 @@ footer {
     justify-content: space-between; /* จัดให้ h1 อยู่ซ้าย, nav อยู่ขวา, img จะอยู่ตรงกลาง */
     align-items: center; /* จัดทุกอย่างให้อยู่กึ่งกลางแนวตั้ง */
     padding: 10px 0; /* เพิ่มพื้นที่ว่างบนล่างนิดหน่อย */
+/* --- จัดรูปแบบ Header ใหม่ --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
 }
+
+/* กลุ่มโลโก้ (ซ้าย) */
+.logo-group {
+    display: flex;
+    align-items: center;
+}
+
+/* กลุ่มเมนูและปุ่ม (ขวา) */
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ระยะห่างระหว่างปุ่มกับเมนู */
+}
+
+/* สไตล์ปุ่มแชทใน Header */
+.header-chat-btn {
+    background-color: #06c755; /* สีเขียว LINE */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: 1px solid white;
+    transition: background-color 0.3s;
+}
+
+.header-chat-btn:hover {
+    background-color: #05b34c;
+}
+
+/* ปรับเมนูให้อยู่ในแนวเดียวกัน */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile Responsive: ซ่อนปุ่มหรือปรับขนาดเมื่อจอเล็ก */
+@media (max-width: 600px) {
+    .header-container { flex-direction: column; gap: 10px; }
+    .nav-group { flex-direction: column; gap: 10px; }
+}
+
 
 
 
